@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-const apiUrl = `http://localhost:5000/api/get/coc02/coconut@013`;
+const apiUrl = `https://pendaftaran-coc-api-production.up.railway.app/api/get/coc013/pendaftar@coc013`;
 
 // Konfigurasi permintaan
 const requestOptions = {
