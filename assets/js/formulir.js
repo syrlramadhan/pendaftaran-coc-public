@@ -9,7 +9,7 @@ function scrollToDownload() {
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
-    const endpoint = `http://localhost:5000/api/add`; // Sesuaikan dengan endpoint yang sesuai
+    const endpoint = `https://pendaftaran-coc-api-production.up.railway.app/api/add`; // Sesuaikan dengan endpoint yang sesuai
 
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Menghindari form submit default
