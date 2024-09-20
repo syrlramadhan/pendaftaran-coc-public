@@ -7,6 +7,12 @@ function scrollToDownload() {
     }
 }
 
+document.querySelector('#gambarInput').addEventListener('change', function (e) {
+    var fileName = e.target.files[0].name;
+    var nextSibling = e.target.nextElementSibling;
+    nextSibling.innerText = fileName;
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const endpoint = `https://pendaftaran-coc-api-production.up.railway.app/api/add`; // Sesuaikan dengan endpoint yang sesuai
