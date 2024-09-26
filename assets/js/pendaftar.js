@@ -19,7 +19,7 @@ fetch(apiUrl, requestOptions)
         return response.json(); // Mengubah respon menjadi objek JavaScript
     })
     .then(data => {
-        if (nama !== 'syahrul' || kunci !== '123') {
+        if (nama !== 'coc013' || kunci !== 'pendaftar@coc013') {
             document.getElementById('jumlah').innerHTML = "0";
             const dataPendaftarElement = document.getElementById('data-pendaftar');
             const pendaftarElement = document.createElement('p');
