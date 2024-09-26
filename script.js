@@ -1,5 +1,5 @@
 window.onload = function(){
-  const apiUrl = `http://localhost:5000/api/get/coc02/coconut@013`;
+  const apiUrl = `https://pendaftaran-coc-api-production.up.railway.app/api/get/coc013/pendaftar@coc013`;
   fetch(apiUrl)
   .then(response => {
     if (!response.ok){
