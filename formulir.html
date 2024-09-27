@@ -194,56 +194,87 @@
                                         <button type="button" class="btn btn-sm btn-primary btn-tooltip"
                                             data-toggle="tooltip" data-placement="top" title="" data-container="body"
                                             data-animation="true"
-                                            data-original-title="Lengkapi Formulir di Bawah">Formulir
-                                            Pendaftaran</button>
+                                            data-original-title="Lengkapi Formulir di Bawah">Formulir Pendaftaran</button>
                                     </small>
                                 </div>
                                 <form role="form" method="post" enctype="multipart/form-data">
+                                    <!-- Input Nama Lengkap -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                             </div>
-                                            <input type="text" placeholder="Nama Lengkap" id="nama_lengkap"
-                                                name="nama_lengkap" class="form-control form-control-alternative">
+                                            <input type="text" placeholder="Nama Lengkap" id="nama_lengkap" name="nama_lengkap"
+                                                class="form-control form-control-alternative">
                                         </div>
                                     </div>
+                                
+                                    <!-- Input Email -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Email" type="email" id="email"
-                                                name="email">
+                                            <input class="form-control" placeholder="Email" type="email" id="email" name="email">
                                         </div>
                                     </div>
+                                
+                                    <!-- Input Telepon -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="ni ni-mobile-button"></i></span>
+                                                <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                             </div>
-                                            <input type="tel" class="form-control" id="teleponInput" name="telepon"
-                                                placeholder="Masukkan nomor telepon">
+                                            <input type="tel" class="form-control" id="teleponInput" name="telepon" placeholder="Masukkan nomor telepon">
                                         </div>
                                     </div>
 
+                                    <!-- Radio Button Apakah Pernah Menggunakan JS Framework -->
+                                    <div class="form-group mb-3">
+                                        <label class="text-muted font-weight">Apakah pernah menggunakan framework JavaScript sebelumnya?</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="pengalaman_js" id="jsFrameworkYa" value="ya" onchange="tampilkanFramework()">
+                                            <label class="form-check-label" for="jsFrameworkYa">Ya</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="pengalaman_js" id="jsFrameworkTidak" value="tidak" onchange="sembunyikanFramework()">
+                                            <label class="form-check-label" for="jsFrameworkTidak">Tidak</label>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Pilihan Framework (Tersembunyi Awalnya) -->
+                                    <div class="form-group mb-3" id="frameworkForm" style="display:none;">
+                                        <label class="text-muted font-weight">Framework apa yang pernah digunakan?</label>
+                                        <select class="form-control" id="framework" name="framework">
+                                            <option value="">Pilih framework</option>
+                                            <option value="React">React</option>
+                                            <option value="Vue">Vue</option>
+                                            <option value="Angular">Angular</option>
+                                            <option value="Svelte">Svelte</option>
+                                            <option value="Next.js">Next.js</option>
+                                            <option value="Nuxt.js">Nuxt.js</option>
+                                        </select>
+                                    </div>
+                                
+                                    <!-- Info Instagram -->
                                     <br>
                                     <small class="text-uppercase text-muted font-weight">
                                         Nikmati kesempatan eksklusif untuk mengakses Modul Materi dan Sertifikat secara gratis!
                                         <br><br>
                                         Cukup upload bukti follow Instagram @coconutdotorg untuk mendapatkan akses penuh.
                                     </small>
+                                
+                                    <!-- Upload Bukti Follow -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="gambarInput"
-                                                    name="file" accept=".jpeg, .jpg, .png">
-                                                <label class="custom-file-label" for="gambarInput">Upload Bukti
-                                                    Follow</label>
+                                                <input type="file" class="custom-file-input" id="gambarInput" name="file" accept=".jpeg, .jpg, .png">
+                                                <label class="custom-file-label" for="gambarInput">Upload Bukti Follow</label>
                                             </div>
                                         </div>
                                     </div>
+                                
+                                    <!-- Button Kirim -->
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary my-4">Kirim</button>
                                     </div>

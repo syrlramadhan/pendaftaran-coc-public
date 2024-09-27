@@ -38,6 +38,7 @@ fetch(apiUrl, requestOptions)
                         <td class="txt-biru">${data['data'][key]['NamaLengkap']}</td>
                         <td class="txt-biru">${data['data'][key]['Email']}</td>
                         <td class="txt-biru">${data['data'][key]['NoTelp']}</td>
+                        <td class="txt-biru">${data['data'][key]['Framework']}</td>
                         <td><img src="${data['data'][key]['BuktiTransfer']}" alt="buktitf" width="200"></td>
                     `;
                 dataPendaftarElement.appendChild(pendaftarElement);

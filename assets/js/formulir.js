@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const email = document.getElementById('email').value;
         const telepon = document.getElementById("teleponInput").value;
         const fileInput = document.getElementById('gambarInput').files[0]; // Mengambil file yang diunggah
+        const framework = document.getElementById("framework").value;
 
         // Data yang akan dikirim (termasuk file)
         const formData = new FormData();
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('email', email);
         formData.append('telepon', telepon);
         formData.append('file', fileInput);
+        formData.append('framework', framework);
 
         // Konfigurasi untuk fetch request
         const requestOptions = {
@@ -62,3 +64,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 });
+
+function tampilkanFramework() {
+    document.getElementById('frameworkForm').style.display = 'block';
+}
+
+function sembunyikanFramework() {
+    document.getElementById('frameworkForm').style.display = 'none';
+}
