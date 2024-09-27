@@ -25,7 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const email = document.getElementById('email').value;
         const telepon = document.getElementById("teleponInput").value;
         const fileInput = document.getElementById('gambarInput').files[0]; // Mengambil file yang diunggah
-        const framework = document.getElementById("framework").value;
+        
+        // Cek apakah user memilih framework JS atau belum
+        let framework = '';
+        if (document.getElementById('jsFrameworkYa').checked) {
+            framework = document.getElementById("framework").value;
+        } else {
+            framework = 'belum pernah menggunakan framework js';
+        }
 
         // Data yang akan dikirim (termasuk file)
         const formData = new FormData();
