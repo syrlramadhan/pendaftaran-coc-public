@@ -17,7 +17,7 @@
 })()
 
 async function loginUser(username, password) {
-    const url = 'http://localhost:9000/api/admin/login';
+    const url = 'https://pendaftaran-coc-api-production.up.railway.app/api/admin/login';
     const data = { username, password };
 
     try {

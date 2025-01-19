@@ -1,65 +1,3 @@
-// (function () {
-// 	'use strict'
-
-// 	var forms = document.querySelectorAll('.needs-validation')
-
-// 	Array.prototype.slice.call(forms).forEach(function (form) {
-// 		form.addEventListener('submit', function (event) {
-// 			if (!form.checkValidity()) {
-// 				event.preventDefault()
-// 				event.stopPropagation()
-// 			}
-
-// 			form.classList.add('was-validated')
-// 		})
-// 	})
-// })
-
-// async function createUser(namaLengkap, email, noTelp, buktitf, framework) {
-// 	const url = 'http://localhost:9000/api/pendaftar/add';
-// 	const formData = new FormData();
-
-// 	formData.append('nama-lengkap', namaLengkap);
-// 	formData.append('email', email);
-// 	formData.append('no-telp', noTelp);
-// 	formData.append('framework', framework);
-// 	formData.append('bukti-transfer', buktitf); // Menyisipkan file langsung
-
-// 	try {
-// 		const response = await fetch(url, {
-// 			method: 'POST',
-// 			body: formData,
-// 		});
-
-// 		const result = await response.json();
-
-// 		if (response.ok) {
-// 			console.log('User created successfully:', result);
-// 		} else {
-// 			console.error('Error creating user:', result);
-// 		}
-// 	} catch (error) {
-// 		console.error('Error:', error);
-// 	}
-// }
-
-// document.getElementById('register-form').addEventListener('submit', function (event) {
-// 	event.preventDefault();
-// 	const form = this;
-// 	if (!form.checkValidity()) {
-// 		event.stopPropagation();
-// 	} else {
-// 		const namaLengkap = document.getElementById('nama-lengkap').value;
-// 		const email = document.getElementById('email').value;
-// 		const noTelp = document.getElementById('no-telp').value;
-// 		const buktitf = document.getElementById('buktitf').files[0];
-// 		const framework = document.getElementById('framework').value;
-// 		createUser(namaLengkap, email, noTelp, buktitf, framework);
-// 	}
-
-// 	form.classList.add('was-validated');
-// });
-
 document.querySelector('#buktitf').addEventListener('change', function (e) {
     var fileName = e.target.files[0].name;
     var nextSibling = e.target.nextElementSibling;
@@ -68,7 +6,7 @@ document.querySelector('#buktitf').addEventListener('change', function (e) {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const form = document.querySelector('form')
-	const enpoint = `http://localhost:9000/api/pendaftar/add`;
+	const enpoint = `https://pendaftaran-coc-api-production.up.railway.app/api/pendaftar/add`;
 
 	form.addEventListener('submit', function (event) {
 		event.preventDefault();
