@@ -91,7 +91,8 @@
                             data-placement="top" title="" data-container="body" data-animation="true"
                             data-original-title="Pendaftaran Berakhir pada Sabtu, 3 February 2024">COCONUT OPEN CLASS
                             BATCH 1</button>
-                        <h3 class=" text-white"><span class="text-white display-4">Introduction to Sveltekit: The frontend framework of the future</span></h3>
+                        <h3 class=" text-white"><span class="text-white display-4">Introduction to Sveltekit: The
+                                frontend framework of the future</span></h3>
                         <!-- <small class="text-uppercase font-weight-bold">Informasi!</small> -->
                     </div>
 
@@ -148,7 +149,8 @@
                                             class="ni ni-calendar-grid-58 mr-2"></i> <b>Jum'at,
                                             11 Oktober 2024</b> 13:00 WITA - Selesai</button>
                                     <br><br>
-                                    <span>Informasi lebih lanjut Hubungi <a href="https://api.whatsapp.com/send/?phone=62895605378736&text=assalamualaikum&type=phone_number&app_absent=0">Fikri
+                                    <span>Informasi lebih lanjut Hubungi <a
+                                            href="https://api.whatsapp.com/send/?phone=62895605378736&text=assalamualaikum&type=phone_number&app_absent=0">Fikri
                                             Haekal</a></span>
                                 </div>
                                 <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel"
@@ -200,57 +202,65 @@
                                         <button type="button" class="btn btn-sm btn-primary btn-tooltip"
                                             data-toggle="tooltip" data-placement="top" title="" data-container="body"
                                             data-animation="true"
-                                            data-original-title="Lengkapi Formulir di Bawah">Formulir Pendaftaran</button>
+                                            data-original-title="Lengkapi Formulir di Bawah">Formulir
+                                            Pendaftaran</button>
                                     </small>
                                 </div>
-                                <form role="form" method="post" enctype="multipart/form-data">
+                                <form role="form" method="post" enctype="application/json" id="register-form">
                                     <!-- Input Nama Lengkap -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                             </div>
-                                            <input type="text" placeholder="Nama Lengkap" id="nama_lengkap" name="nama_lengkap"
-                                                class="form-control form-control-alternative">
+                                            <input type="text" placeholder="Nama Lengkap" id="nama-lengkap"
+                                                name="nama_lengkap" class="form-control form-control-alternative">
                                         </div>
                                     </div>
-                                
+
                                     <!-- Input Email -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Email" type="email" id="email" name="email">
+                                            <input class="form-control" placeholder="Email" type="email" id="email"
+                                                name="email">
                                         </div>
                                     </div>
-                                
+
                                     <!-- Input Telepon -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
+                                                <span class="input-group-text"><i
+                                                        class="ni ni-mobile-button"></i></span>
                                             </div>
-                                            <input type="tel" class="form-control" id="teleponInput" name="telepon" placeholder="Masukkan nomor telepon">
+                                            <input type="text" class="form-control" id="no-telp" name="telepon"
+                                                placeholder="Masukkan nomor telepon">
                                         </div>
                                     </div>
 
                                     <!-- Radio Button Apakah Pernah Menggunakan JS Framework -->
                                     <div class="form-group mb-3">
-                                        <label class="text-muted font-weight">Apakah pernah menggunakan framework JavaScript sebelumnya?</label>
+                                        <label class="text-muted font-weight">Apakah pernah menggunakan framework
+                                            JavaScript sebelumnya?</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="pengalaman_js" id="jsFrameworkYa" value="ya" onchange="tampilkanFramework()">
+                                            <input class="form-check-input" type="radio" name="pengalaman_js"
+                                                id="jsFrameworkYa" value="ya" onchange="tampilkanFramework()">
                                             <label class="form-check-label" for="jsFrameworkYa">Ya</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="pengalaman_js" id="jsFrameworkTidak" value="tidak" onchange="sembunyikanFramework()">
+                                            <input class="form-check-input" type="radio" name="pengalaman_js"
+                                                id="jsFrameworkTidak" value="tidak" onchange="sembunyikanFramework()">
                                             <label class="form-check-label" for="jsFrameworkTidak">Tidak</label>
                                         </div>
                                     </div>
-                                
+
                                     <!-- Pilihan Framework (Tersembunyi Awalnya) -->
                                     <div class="form-group mb-3" id="frameworkForm" style="display:none;">
-                                        <label class="text-muted font-weight">Framework apa yang pernah digunakan?</label>
+                                        <label class="text-muted font-weight">Framework apa yang pernah
+                                            digunakan?</label>
                                         <select class="form-control" id="framework" name="framework">
                                             <option value="">Pilih framework</option>
                                             <option value="React">React</option>
@@ -261,25 +271,30 @@
                                             <option value="Nuxt.js">Nuxt.js</option>
                                         </select>
                                     </div>
-                                
+
                                     <!-- Info Instagram -->
                                     <br>
                                     <small class="text-uppercase text-muted font-weight">
-                                        Pendaftaran kegiatan ini benar-benar gratis! Namun, jika ingin menerima sertifikat dan modul pembelajaran eksklusif, cukup dengan membayar Rp15.000 ke rekening BRI 4955 0104 7507 535 A.N. Andi Citra Ayu Lestari dan mengunggah bukti transfer.
+                                        Pendaftaran kegiatan ini benar-benar gratis! Namun, jika ingin menerima
+                                        sertifikat dan modul pembelajaran eksklusif, cukup dengan membayar Rp15.000 ke
+                                        rekening BRI 4955 0104 7507 535 A.N. Andi Citra Ayu Lestari dan mengunggah bukti
+                                        transfer.
                                         <br><br>
                                         Mudah, bukan? Ayo gabung dan nikmati manfaatnya bersama kami!
                                     </small>
-                                
+
                                     <!-- Upload Bukti Follow -->
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="gambarInput" name="file" accept=".jpeg, .jpg, .png">
-                                                <label class="custom-file-label" for="gambarInput">Upload Bukti Transfer</label>
+                                                <input type="file" class="custom-file-input" id="buktitf"
+                                                    name="file" accept=".jpeg, .jpg, .png">
+                                                <label class="custom-file-label" for="gambarInput">Upload Bukti
+                                                    Transfer</label>
                                             </div>
                                         </div>
                                     </div>
-                                
+
                                     <!-- Button Kirim -->
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary my-4">Kirim</button>
@@ -364,10 +379,10 @@
 <script src="./assets/js/plugins/bootstrap-datepicker.min.js"></script>
 <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
 <script src="./assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
 <script src="assets/js/formulir.js"></script>
-<script src="../script.js"></script>
-<script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+<!-- <script src="../script.js"></script> -->
+<!-- <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script> -->
 
 </html>

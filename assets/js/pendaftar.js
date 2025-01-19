@@ -1,50 +1,46 @@
-// Ambil parameter URL
-const urlParams = new URLSearchParams(window.location.search);
-const nama = urlParams.get('nama');
-const kunci = urlParams.get('kunci');
-const apiUrl = `https://pendaftaran-coc-api-production.up.railway.app/api/get/${nama}/${kunci}`;
+document.addEventListener('DOMContentLoaded', function () {
+    fetchDataPendaftar();
+});
 
-const requestOptions = {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
+async function fetchDataPendaftar() {
+    const token = localStorage.getItem('authToken');
+
+    if (!token) {
+        alert('You need to log in first');
+        window.location.href = 'login.html';
+        return;
     }
-};
 
-fetch(apiUrl, requestOptions)
-    .then(response => {
+    const url = 'http://localhost:9000/api/pendaftar/get';
+    try {
+        const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Terjadi kesalahan saat melakukan permintaan.');
+            throw new Error('Gagal mengambil data pendaftar');
         }
-        return response.json(); // Mengubah respon menjadi objek JavaScript
-    })
-    .then(data => {
-        if (nama !== 'coc013' || kunci !== 'pendaftar@coc013') {
-            document.getElementById('jumlah').innerHTML = "0";
-            const dataPendaftarElement = document.getElementById('data-pendaftar');
-            const pendaftarElement = document.createElement('p');
-            pendaftarElement.innerHTML = `
-                    <a class="txt-biru"><b>Anda :</b></a> ${data['message']}<br>
-                    <hr>
-                `;
-            dataPendaftarElement.appendChild(pendaftarElement);
-        }
-            document.getElementById('jumlah').innerHTML = Object.keys(data['data']).length;
-            const dataPendaftarElement = document.getElementById('tbl');
-            for (const key in data['data']) {
-                const pendaftarElement = document.createElement('tr');
-                pendaftarElement.innerHTML = `
-                        <td class="txt-biru">${key}</td>
-                        <td class="txt-biru">${data['data'][key]['NamaLengkap']}</td>
-                        <td class="txt-biru">${data['data'][key]['Email']}</td>
-                        <td class="txt-biru">${data['data'][key]['NoTelp']}</td>
-                        <td class="txt-biru">${data['data'][key]['Framework']}</td>
-                        <td><img src="${data['data'][key]['BuktiTransfer']}" alt="buktitf" width="200"></td>
-                    `;
-                dataPendaftarElement.appendChild(pendaftarElement);
-            }
-        
-    })
-    .catch(error => {
-        console.error('Ada kesalahan:', error); // Menampilkan kesalahan jika permintaan gagal
+        const result = await response.json();
+        renderTableData(result.data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+function renderTableData(data) {
+    const table = document.getElementById('tbl');
+    const jumlahElement = document.getElementById('jumlah');
+    jumlahElement.textContent = data.length;
+
+    data.forEach((pendaftar, index) => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${pendaftar["nama-lengkap"]}</td>
+            <td>${pendaftar.email}</td>
+            <td>${pendaftar["no-telp"]}</td>
+            <td>${pendaftar.framework}</td>
+            <td><img src="http://localhost:9000/api/pendaftar/uploads/${pendaftar["bukti-transfer"]}" alt="buktitf"></td>
+        `;
+
+        table.appendChild(row);
     });
+}
