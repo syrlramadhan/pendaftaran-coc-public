@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 			.then(data => {
 				console.log('Response:', data);
+				if (data['message'] == 'success to add pendaftar') alert("Pendaftaran berhasil");
 				if (data['message'] == 'nama') alert("Harap mengisi nama lengkap");
                 if (data['message'] == 'email') alert('Harap mengisi email')
                 if (data['massage'] == 'telepon') alert('Harap mengisi no telepon')
