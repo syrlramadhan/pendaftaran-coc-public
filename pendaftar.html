@@ -111,9 +111,13 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel"
                                     aria-labelledby="tabs-icons-text-1-tab">
-
                                     <div class="description" id="data-pendaftar">
-                                        <p class="txt-biru">Jumlah Pendaftar <b><a id="jumlah"></a> Orang</b></p>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <p class="txt-biru mb-0">Jumlah Pendaftar <b><a id="jumlah"></a> Orang</b></p>
+                                            <a href="https://pendaftaran-coc-api-production.up.railway.app/api/pendaftar/database/pendaftar.db" class="btn btn-sm btn-primary me-3" download="backup-pendaftaran.db">
+                                                <i class="ni ni-cloud-download-95 me-2"></i> Download Backup Database
+                                            </a>
+                                        </div>
                                         <table border="1" style="width: 100%; table-layout: fixed; text-align: center;"
                                             id="tbl">
                                             <tr>
