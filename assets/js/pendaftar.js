@@ -10,7 +10,7 @@ async function fetchDataPendaftar() {
         return;
     }
 
-    const url = 'https://pendaftaran-coc-api-production.up.railway.app/api/pendaftar/get';
+    const url = 'http://localhost:9000/api/pendaftar/get';
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -37,7 +37,7 @@ function renderTableData(data) {
             <td>${pendaftar.email}</td>
             <td>${pendaftar["no-telp"]}</td>
             <td>${pendaftar.framework}</td>
-            <td><img src="https://pendaftaran-coc-api-production.up.railway.app/api/pendaftar/uploads/${pendaftar["bukti-transfer"]}" alt="buktitf"></td>
+            <td><img src="http://localhost:9000/api/pendaftar/uploads/${pendaftar["bukti-transfer"]}" alt="buktitf"></td>
         `;
 
         table.appendChild(row);

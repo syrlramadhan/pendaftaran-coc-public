@@ -12,6 +12,5 @@ function enforceAdminAccess() {
 
     if (!adminPages.includes(currentPage)) {
         localStorage.removeItem('authToken');
-        console.log('Token removed because admin page was not accessed.');
     }
 }
