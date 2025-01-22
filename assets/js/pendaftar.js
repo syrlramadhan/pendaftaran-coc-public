@@ -6,7 +6,6 @@ async function fetchDataPendaftar() {
     const token = localStorage.getItem('authToken');
 
     if (!token) {
-        alert('You need to log in first');
         window.location.href = 'login.html';
         return;
     }

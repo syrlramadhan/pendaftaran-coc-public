@@ -6,7 +6,7 @@ document.querySelector('#buktitf').addEventListener('change', function (e) {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const form = document.querySelector('form')
-	const enpoint = `https://pendaftaran-coc-api-production.up.railway.app/api/pendaftar/add`;
+	const enpoint = `http://pendaftaran-coc-api-production.up.railway.app/api/pendaftar/add`;
 
 	form.addEventListener('submit', function (event) {
 		event.preventDefault();
